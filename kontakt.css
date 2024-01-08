@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: monospace;
+    
+}
+
+main{
+box-sizing: border-box;
+background-color: #122505;
+color: aliceblue;
+height: 100vh;
+
+}
+
+.contactPage{
+display: flex;
+flex-direction: column;
+}
+
+.train {
+    width: max-content;
+    animation: move 18s infinite linear;
+  }
+  
+  @keyframes move {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+h1{
+    font-size: 4rem;
+justify-self: baseline;
+align-self: center;
+  
+}
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-top: 5rem;
+
+}
+
+li{
+    padding: 1rem;
+}
+
+li a{
+    color: aliceblue;
+}
+
+nav{
+position: fixed;
+bottom: 0;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+background-color: #b3b3b2;
+height: 4rem;
+width: 100%;
+font-size: 1.5rem;
+font-weight: 600;
+}
+
+nav a {
+    color: #122505;
+  }

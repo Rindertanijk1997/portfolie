@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolie</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <main>
+
+        <h1>Lär känna mig lite genom att spela ett quiz på 5 frågor!</h1>
+
+        <section class="quiz">
+
+        <div class="quiz-question" id="question1">
+            <h2>Jag flyttade till Sverige när jag va 5 år, vilket land är jag född i?</h2>
+            <button class="answer">Belgien</button>
+            <button class="answer correct">Nederländerna</button>
+            <button class="answer">Luxenburg</button>
+          </div>
+          
+          <div class="quiz-question" id="question2" style="display: none;">
+            <h2>Vilket fotbollslag håller jag på?</h2>
+            <button class="answer">Arsenal</button>
+            <button class="answer">Everton</button>
+            <button class="answer correct">Liverpool</button>
+          </div>
+          
+          <div class="quiz-question" id="question3" style="display: none;">
+            <h2>Vilken är min favoritfärg?</h2>
+            <button class="answer correct">Blå</button>
+            <button class="answer">Röd</button>
+            <button class="answer">Grön</button>
+          </div>
+
+          <div class="quiz-question" id="question4" style="display: none;">
+            <h2>Vilket yrke jobbade jag med innan jag började plugga?</h2>
+            <button class="answer">CNC operatör</button>
+            <button class="answer">Isoleringsplåtslagare</button>
+            <button class="answer correct">Jobbat med båda</button>
+          </div>
+
+          <div class="quiz-question" id="question5" style="display: none;">
+            <h2>Mitt favoritdjur är?</h2>
+            <button class="answer">Katt</button>
+            <button class="answer correct">Hund</button>
+            <button class="answer">Ödlor</button>
+          </div>
+
+          
+          <button id="next">Nästa fråga</button>
+         
+          <p id="score">Poäng: 0</p>
+        
+          <div id="result"></div>
+
+          <div id="endText"></div>
+
+        </section>
+
+
+        <nav>
+            <a href="index.html">Hem</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="quiz.html">Quiz om mig</a>
+            <a href="projekt.html">Projekt</a>
+            <a href="cv.html">CV</a>
+            <a href="kompetenser.html">Kompetenser</a>
+        </nav>
+
+    </main>
+    
+
+    <script src="quiz.js"></script>
+</body>
+</html>
