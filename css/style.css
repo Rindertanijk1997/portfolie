@@ -101,7 +101,9 @@ h3 {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+    color: #0f1419;
 }
 
 .btn-secondary {
@@ -112,7 +114,11 @@ h3 {
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%);
+    color: #0f1419;
+    border-color: #00ff88;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 /* CONTAINERS */
