@@ -1,0 +1,60 @@
+/* NAVBAR STYLES (moved from header.css) */
+
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nav ul {
+	display: flex;
+	list-style: none;
+	gap: 40px;
+	margin: 0;
+	padding: 0;
+}
+
+.nav a {
+	color: var(--text-secondary);
+	font-size: 0.95rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	position: relative;
+	transition: color 0.3s ease;
+}
+
+.nav a::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: linear-gradient(90deg, var(--accent), var(--gold));
+	transition: width 0.3s ease;
+}
+
+.nav a:hover {
+	color: var(--accent);
+}
+
+.nav a:hover::after {
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.nav ul {
+		gap: 15px;
+	}
+
+	.nav a {
+		font-size: 0.85rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
