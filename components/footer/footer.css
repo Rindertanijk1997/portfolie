@@ -19,6 +19,19 @@
 }
 
 
+.footer-linkedin {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.footer-linkedin:hover {
+    color: var(--accent);
+}
+
 /* FOOTER BOTTOM */
 .footer-bottom {
     text-align: center;

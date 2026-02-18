@@ -41,6 +41,28 @@ async function loadHeader() {
     } catch (error) {
         console.error('Error loading header:', error);
     }
+    initThemeToggle();
+}
+
+function initThemeToggle() {
+    const btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+
+    const label = btn.querySelector('.theme-label');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+    document.documentElement.classList.add('light');
+    label.textContent = 'Dark mode';
+} else {
+    label.textContent = 'Light mode';
+}
+
+    btn.addEventListener('click', () => {
+        const isLight = document.documentElement.classList.toggle('light');
+        label.textContent = isLight ? 'Dark mode' : 'Light mode';
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
 }
 
 // Fix navigation links

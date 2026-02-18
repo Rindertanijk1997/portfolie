@@ -1,0 +1,235 @@
+/* ROOT VARIABLES */
+:root.light {
+    --text-primary: #050505;
+    --text-secondary: #1e1e1e;
+    --gold: #6b5c3e;
+    --accent: #3b5b4e;
+    --accent-dark: #0c422c;
+    --success: #26c281;
+    --border: #d8d0c4;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 40px 80px rgba(0, 0, 0, 0.12);
+}
+
+/* BODY */
+:root.light body {
+    background: linear-gradient(135deg, #f8f5f0 0%, #ede8e0 100%);
+}
+
+/* HEADER */
+:root.light .header {
+    background: rgba(248, 245, 240, 0.96);
+    border-bottom: 1px solid rgba(44, 95, 74, 0.15);
+}
+
+:root.light .nav a {
+    color: var(--text-secondary);
+}
+
+:root.light .nav a:hover {
+    color: var(--accent);
+}
+
+/* FOOTER */
+:root.light .footer {
+    background: rgba(237, 232, 224, 0.95);
+    border-top-color: var(--border);
+}
+
+/* HERO */
+:root.light .hero::before {
+    background: linear-gradient(135deg, rgba(44, 95, 74, 0.05) 0%, rgba(44, 95, 74, 0.02) 100%);
+}
+
+:root.light .hero h1 {
+    background: linear-gradient(135deg, #0d0d0d 0%, #2c5f4a 60%, #4a8a6e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+:root.light .hero-avatar {
+    border-color: rgba(44, 95, 74, 0.25);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 6px 18px rgba(44, 95, 74, 0.1);
+}
+
+/* PROJECTS */
+:root.light .projects {
+    background: rgba(237, 232, 224, 0.7);
+    border-color: var(--border);
+}
+
+:root.light .project-card {
+    background: #f8f5f0;
+    border-color: #d8d0c4;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+:root.light .project-card:hover {
+    box-shadow: 0 20px 50px rgba(44, 95, 74, 0.15);
+    border-color: var(--accent);
+}
+
+:root.light .project-link.github {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: #bbbbbb;
+}
+
+:root.light .project-link.github:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: var(--text-primary);
+    box-shadow: none;
+}
+
+:root.light .project-link.demo {
+    color: #f8f5f0;
+}
+
+:root.light .project-link.demo:hover{
+    color: var(--text-primary);
+}
+
+/* ABOUT - HERO */
+:root.light .about-hero {
+    background: linear-gradient(135deg, rgba(44, 95, 74, 0.05) 0%, rgba(44, 95, 74, 0.02) 100%);
+}
+
+/* ABOUT - PROFILE CARD */
+:root.light .profile-card {
+    background: #f8f5f0;
+    border-color: #d8d0c4;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ABOUT - SKILLS */
+:root.light .skill-category {
+    background: #f8f5f0;
+    border-color: #d8d0c4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    color: var(--text-primary);
+}
+
+:root.light .skill-category h4 {
+    color: var(--accent);
+}
+
+:root.light .skill {
+    background: #ede8e0;
+    color: var(--text-primary);
+    border-color: #d8d0c4;
+}
+
+:root.light .skill-list .skill {
+    background: #e8e2d8;
+    border-color: #d0c8bc;
+    color: var(--text-primary);
+}
+
+:root.light .skill-list .skill:hover {
+    background: rgba(44, 95, 74, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* ABOUT - TIMELINE */
+:root.light .timeline li {
+    border-bottom-color: #e0d8cc;
+    color: var(--text-secondary);
+}
+
+
+/* DARK MODE – ljus knapp med mörk text */
+#theme-toggle {
+    background: #f8f5f0;
+    border: 2px solid #f8f5f0;
+    border-radius: 50px;
+    padding: 5px;
+    padding-right: 14px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
+    transition: all 0.35s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0a0a0a;
+    margin-left: 20px;
+    min-width: 140px;
+}
+
+.theme-knob {
+    background: #0a0a0a;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.35s ease;
+    order: 0;
+}
+
+.theme-label {
+    order: 1;
+}
+
+/* LIGHT MODE – mörk knapp med ljus text, kula till höger */
+:root.light #theme-toggle {
+    background: #0a0a0a;
+    border-color: #0a0a0a;
+    color: #f8f5f0;
+    flex-direction: row-reverse;
+    padding: 5px;
+    padding-left: 14px;
+}
+
+:root.light .theme-knob {
+    background: #f8f5f0;
+}
+
+
+/* När light mode är aktivt – knappen glider till höger */
+:root.light #theme-toggle {
+    background: #f8f5f0;
+    border-color: #0a0a0a;
+    color: #0a0a0a;
+    flex-direction: row-reverse;
+    padding: 5px;
+    padding-left: 14px;
+}
+
+:root.light .theme-knob {
+    background: #0a0a0a;
+}
+
+#theme-toggle:hover {
+    border-color: #2c5f4a;
+    background: #eefef7;
+    color: #000000;
+}
+
+:root.light #theme-toggle:hover {
+    border-color: #2c5f4a;
+    background: #eefef7;
+    color: #000000;
+}
+
+:root.light .btn {
+    color: #f8f5f0;
+}
+
+:root.light .btn:hover {
+    color: var(--text-primary);
+}
+
+:root.light .btn-secondary {
+    color: var(--accent);
+}
+
+:root.light .btn-secondary:hover {
+    color: #f8f5f0;
+}
