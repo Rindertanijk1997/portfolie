@@ -2,9 +2,9 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(15, 20, 25, 0.85);
+    background: rgba(10, 14, 26, 0.85);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.12);
     transition: all 0.3s ease;
 }
 
@@ -30,6 +30,7 @@
     background-clip: text;
     cursor: pointer;
     transition: transform 0.3s ease;
+    text-decoration: none;
 }
 
 .logo:hover {

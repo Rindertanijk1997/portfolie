@@ -45,6 +45,7 @@ async function loadHeader() {
 
 // Fix navigation links
 function fixNavLinks() {
+    // Fix nav links
     const navLinks = document.querySelectorAll('.nav a');
 
     navLinks.forEach(link => {
@@ -102,6 +103,15 @@ function fixNavLinks() {
             }
         }
     });
+
+    // Fix logo link
+    const logoLink = document.querySelector('.logo');
+    if (logoLink) {
+        let href = logoLink.getAttribute('href');
+        if (href === 'index.html' && CURRENT_DIR !== 'root') {
+            logoLink.setAttribute('href', '../index.html');
+        }
+    }
 }
 
 // Load Footer

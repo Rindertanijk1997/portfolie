@@ -1,5 +1,6 @@
 .about-hero {
     padding: 5em 1.25em;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.12) 0%, rgba(232, 212, 160, 0.06) 100%);
 }
 
 .about-avatar {
@@ -34,6 +35,7 @@
     background: rgba(26,31,46,0.5);
     border: 1px solid var(--border);
     padding: 1.5em;
+    margin-right: 2em;
     border-radius: 0.5em;
     backdrop-filter: blur(0.5em);
     height: fit-content;
@@ -115,12 +117,12 @@
     background: rgba(42,49,66,0.5);
     padding: 0.5em 0.75em;
     font-size: 0.9rem;
-    border: 1px solid rgba(0,212,255,0.1);
+    border: 1px solid rgba(212, 165, 116, 0.15);
     transition: all 0.3s ease;
 }
 
 .skill-list .skill:hover {
-    background: rgba(0,212,255,0.15);
+    background: rgba(212, 165, 116, 0.2);
     border-color: var(--accent);
     color: var(--accent);
 }
@@ -154,7 +156,7 @@
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(212, 165, 116, 0.15);
     border-color: var(--gold);
     color: var(--gold);
 }
