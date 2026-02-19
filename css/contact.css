@@ -1,0 +1,97 @@
+.contact-hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.contact-hero p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    padding: 20px 20px 80px;
+    align-items: start;
+}
+
+/* KONTAKTINFO */
+.contact-info h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.contact-item a,
+.contact-item span {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.contact-item a:hover {
+    color: var(--accent);
+}
+
+.contact-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.availability-dot {
+    width: 8px;
+    height: 8px;
+    background: #4caf82;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(76, 175, 130, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+#contact-form-container:empty {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
