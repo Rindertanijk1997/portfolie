@@ -2,10 +2,7 @@
     width: 100%;
     max-width: 540px;
     padding: 50px;
-    background: rgba(26, 31, 46, 0.4);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
+    background-color: var(--primary);
 }
 
 .form-group {
@@ -65,4 +62,3 @@
     text-align: center;
     min-height: 20px;
 }
-

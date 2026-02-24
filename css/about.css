@@ -32,12 +32,8 @@
 }
 
 .profile-card {
-    background: rgba(26,31,46,0.5);
-    border: 1px solid var(--border);
     padding: 1.5em;
     margin-right: 2em;
-    border-radius: 0.5em;
-    backdrop-filter: blur(0.5em);
     height: fit-content;
     position: sticky;
     top: calc(50vh - 10em);
@@ -92,11 +88,7 @@
 }
 
 .skill-category {
-    background: rgba(26,31,46,0.3);
-    border: 1px solid var(--border);
     padding: 1.25em;
-    border-radius: 0.5em;
-    backdrop-filter: blur(0.5em);
 }
 
 .skill-category h4 {
@@ -148,18 +140,7 @@
     border-top: 1px solid var(--border);
 }
 
-.btn-secondary {
-    background: transparent;
-    color: var(--accent);
-    border: 0.125em solid var(--accent);
-    box-shadow: none;
-}
-
-.btn-secondary:hover {
-    background: rgba(212, 165, 116, 0.15);
-    border-color: var(--gold);
-    color: var(--gold);
-}
+/* .btn-secondary definieras i style.css */
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
