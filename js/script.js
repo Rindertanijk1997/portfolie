@@ -1,22 +1,8 @@
-function getBasePath() {
-    const path = window.location.pathname;
-    if (path.includes('/pages/') || path.includes('/projects/')) {
-        return '../';
-    }
-    return '';
-}
-
-const BASE_PATH = getBasePath();
-const CURRENT_DIR = (function(){
-    const p = window.location.pathname;
-    if (p.includes('/pages/')) return 'pages';
-    if (p.includes('/projects/')) return 'projects';
-    return 'root';
-})();
+const BASE_PATH = '';
 
 async function loadHeader() {
     try {
-        const response = await fetch(BASE_PATH + 'components/header/header.html');
+        const response = await fetch('components/header/header.html');
         const headerHTML = await response.text();
         document.getElementById('header').innerHTML = headerHTML;
 
@@ -25,18 +11,17 @@ async function loadHeader() {
             const src = el.getAttribute('data-include');
             if (!src) continue;
             try {
-                const resp = await fetch(BASE_PATH + src);
+                const resp = await fetch(src);
                 el.innerHTML = await resp.text();
             } catch (incErr) {
                 console.error('Error loading include', src, incErr);
             }
         }
 
-        fixNavLinks();
+        initThemeToggle();
     } catch (error) {
         console.error('Error loading header:', error);
     }
-    initThemeToggle();
 }
 
 function initThemeToggle() {
@@ -57,30 +42,6 @@ function initThemeToggle() {
         label.textContent = isLight ? 'Dark mode' : 'Light mode';
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
     });
-}
-
-function fixNavLinks() {
-    document.querySelectorAll('.nav a').forEach(link => {
-        let href = link.getAttribute('href');
-        if (!href || href.startsWith('#') || CURRENT_DIR === 'root') return;
-
-        if (CURRENT_DIR === 'pages') {
-            if (href === 'index.html') link.setAttribute('href', '../index.html');
-            else if (href.startsWith('pages/')) link.setAttribute('href', href.replace(/^pages\//, ''));
-            else if (!href.startsWith('../')) link.setAttribute('href', '../' + href);
-        }
-
-        if (CURRENT_DIR === 'projects') {
-            if (href === 'index.html') link.setAttribute('href', '../index.html');
-            else if (href.startsWith('projects/')) link.setAttribute('href', href.replace(/^projects\//, ''));
-            else if (!href.startsWith('../')) link.setAttribute('href', '../' + href);
-        }
-    });
-
-    const logo = document.querySelector('.logo');
-    if (logo && logo.getAttribute('href') === 'index.html' && CURRENT_DIR !== 'root') {
-        logo.setAttribute('href', '../index.html');
-    }
 }
 
 function initContactForm() {
@@ -124,7 +85,7 @@ async function loadContactForm() {
     const container = document.getElementById('contact-form-container');
     if (!container) return;
     try {
-        const response = await fetch(BASE_PATH + 'components/contact-form/contact-form.html');
+        const response = await fetch('components/contact-form/contact-form.html');
         container.innerHTML = await response.text();
         initContactForm();
     } catch (error) {
@@ -134,7 +95,7 @@ async function loadContactForm() {
 
 async function loadFooter() {
     try {
-        const response = await fetch(BASE_PATH + 'components/footer/footer.html');
+        const response = await fetch('components/footer/footer.html');
         document.getElementById('footer').innerHTML = await response.text();
         const year = document.getElementById('year');
         if (year) year.textContent = new Date().getFullYear();
@@ -143,9 +104,27 @@ async function loadFooter() {
     }
 }
 
+function initTypewriter() {
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+
+    const text = el.textContent;
+    el.textContent = '';
+
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            el.insertAdjacentText('beforeend', text[i++]);
+            setTimeout(type, 50);
+        }
+    }
+
+    setTimeout(type, 1000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
     loadContactForm();
+    initTypewriter();
 });
-

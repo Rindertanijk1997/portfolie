@@ -32,19 +32,6 @@ body {
     position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(232, 212, 160, 0.04) 0%, transparent 50%);
-    pointer-events: none;
-    z-index: 0;
-}
 
 main {
     position: relative;
@@ -168,6 +155,24 @@ p {
     height: 3px;
     background: linear-gradient(90deg, var(--accent), transparent);
     margin: 20px 0;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
 }
 
 /* RESPONSIVE */
