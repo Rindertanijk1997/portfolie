@@ -68,17 +68,29 @@
     order: 1;
 }
 
+#theme-toggle {
+    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+    min-width: clamp(90px, 15vw, 140px);
+    padding: 4px clamp(8px, 1.5vw, 14px) 4px 4px;
+}
+
+.theme-knob {
+    width: clamp(22px, 3vw, 30px);
+    height: clamp(22px, 3vw, 30px);
+}
+
 :root.light #theme-toggle {
     background: #f8f5f0;
     border-color: #0a0a0a;
     color: #0a0a0a;
     flex-direction: row-reverse;
-    padding: 5px;
-    padding-left: 14px;
+    padding: 4px 4px 4px clamp(8px, 1.5vw, 14px);
 }
 
 :root.light .theme-knob {
     background: #0a0a0a;
+    width: clamp(22px, 3vw, 30px);
+    height: clamp(22px, 3vw, 30px);
 }
 
 #theme-toggle:hover {
@@ -109,6 +121,21 @@
     border-color: rgba(44, 95, 74, 0.25);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 6px 18px rgba(44, 95, 74, 0.1);
 }
+
+/* ── Nav ───────────────────────────────────── */
+:root.light .nav-links {
+    background: #f8f5f0;
+    border-color: var(--border);
+}
+
+:root.light .nav-links li a {
+    border-bottom-color: var(--border);
+}
+
+:root.light .hamburger span {
+    background: var(--text-secondary);
+}
+
 
 /* ── KNAPPAR ───────────────────────────────────── */
 :root.light .btn {
@@ -269,4 +296,28 @@
 :root.light .footer {
     background: rgba(237, 232, 224, 0.95);
     border-top-color: var(--border);
+}
+
+/* QUIZ */
+:root.light .quiz-btn {
+    background: #ffffff;
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+:root.light .quiz-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+:root.light .quiz-btn.correct {
+    background: rgba(44, 175, 129, 0.775);
+    border-color: #2caf82;
+    color: #2caf82;
+}
+
+:root.light.quiz-btn.wrong {
+    background: rgba(220, 80, 80, 0.695);
+    border-color: #dc5050;
+    color: #dc5050;
 }

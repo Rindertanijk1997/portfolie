@@ -55,7 +55,6 @@
 }
 
 .about-section h2 {
-    color: var(--gold);
     margin-bottom: 0.625em;
 }
 
@@ -140,15 +139,117 @@
     border-top: 1px solid var(--border);
 }
 
-/* .btn-secondary definieras i style.css */
 
-/* RESPONSIVE */
+/* QUIZ */
+
+.quiz-section {
+    padding: 40px 0px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+
+#quiz {
+    max-width: 540px;
+    margin: 40px 0 0 0;
+    text-align: left;
+}
+
+.quiz-progress {
+    text-align: left;
+}
+
+.quiz-question {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    min-height: 40px;
+    text-align: left;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.quiz-btn {
+    background: rgba(26, 31, 46, 0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 24px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.quiz-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateX(6px);
+}
+
+.quiz-btn.correct {
+    background: rgba(44, 175, 130, 0.15);
+    border-color: #2caf82;
+    color: #2caf82;
+}
+
+.quiz-btn.wrong {
+    background: rgba(220, 80, 80, 0.15);
+    border-color: #dc5050;
+    color: #dc5050;
+}
+
+.quiz-progress {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    text-align: left;
+}
+
+.quiz-result {
+    max-width: 540px;
+    margin: 40px 0 0 0;
+    text-align: left;
+}
+
+.quiz-score {
+    font-size: 4rem;
+    font-weight: 300;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+}
+
+.quiz-message {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.quiz-restart {
+    margin-top: 10px;
+}
+
 @media (max-width: 900px) {
     .about-grid {
         grid-template-columns: 1fr;
+        padding: 2em 1.25em 4em;
     }
 
     .profile-card {
+        position: static;
+        margin-right: 0;
         margin-bottom: 1.25em;
     }
 }
