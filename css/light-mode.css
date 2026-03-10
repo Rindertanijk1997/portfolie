@@ -30,79 +30,36 @@
     color: var(--accent);
 }
 
-/* ── THEME TOGGLE ──────────────────────────────── */
-#theme-toggle {
+:root.light .nav-links {
     background: #f8f5f0;
-    border: 2px solid #f8f5f0;
-    border-radius: 50px;
-    padding: 5px;
-    padding-right: 14px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: lowercase;
-    transition: all 0.35s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #0a0a0a;
-    margin-left: 20px;
-    min-width: 140px;
+    border-color: var(--border);
 }
 
-.theme-knob {
-    background: #0a0a0a;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: transform 0.35s ease;
-    order: 0;
+:root.light .nav-links li a {
+    border-bottom-color: var(--border);
 }
 
-.theme-label {
-    order: 1;
+:root.light .hamburger span {
+    background: var(--text-secondary);
 }
 
-#theme-toggle {
-    font-size: clamp(0.6rem, 1.5vw, 0.8rem);
-    min-width: clamp(90px, 15vw, 140px);
-    padding: 4px clamp(8px, 1.5vw, 14px) 4px 4px;
-}
-
-.theme-knob {
-    width: clamp(22px, 3vw, 30px);
-    height: clamp(22px, 3vw, 30px);
-}
+/* ── THEME TOGGLE ──────────────────────────────── */
 
 :root.light #theme-toggle {
-    background: #f8f5f0;
-    border-color: #0a0a0a;
-    color: #0a0a0a;
-    flex-direction: row-reverse;
-    padding: 4px 4px 4px clamp(8px, 1.5vw, 14px);
+    background: #0a0a0a;
 }
 
 :root.light .theme-knob {
-    background: #0a0a0a;
-    width: clamp(22px, 3vw, 30px);
-    height: clamp(22px, 3vw, 30px);
+    background: #ffffff;
+    transform: translateY(-50%) translateX(22px);
 }
 
 #theme-toggle:hover {
-    border-color: #2c5f4a;
-    background: #eefef7;
-    color: #000000;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 :root.light #theme-toggle:hover {
-    border-color: #2c5f4a;
-    background: #eefef7;
-    color: #000000;
+    background: #2a2a2a;
 }
 
 /* ── HERO ──────────────────────────────────────── */
@@ -122,21 +79,6 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 6px 18px rgba(44, 95, 74, 0.1);
 }
 
-/* ── Nav ───────────────────────────────────── */
-:root.light .nav-links {
-    background: #f8f5f0;
-    border-color: var(--border);
-}
-
-:root.light .nav-links li a {
-    border-bottom-color: var(--border);
-}
-
-:root.light .hamburger span {
-    background: var(--text-secondary);
-}
-
-
 /* ── KNAPPAR ───────────────────────────────────── */
 :root.light .btn {
     color: #f8f5f0;
@@ -147,7 +89,9 @@
 }
 
 :root.light .btn-secondary {
-    color: var(--accent);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    border-color: var(--accent);
+    color: #f8f5f0;
 }
 
 :root.light .btn-secondary:hover {
@@ -195,18 +139,6 @@
     color: #ffffff;
 }
 
-:root.light .btn-secondary {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-    border-color: var(--accent);
-    color: #f8f5f0;
-}
-
-:root.light .btn-secondary:hover {
-    background: #1a3d2b;
-    border-color: #1a3d2b;
-    color: #ffffff;
-}
-
 /* ── TESTIMONIALS ──────────────────────────────── */
 :root.light .testimonial-card {
     background: #ffffff;
@@ -230,9 +162,6 @@
 }
 
 :root.light .skill-category {
-    background: #f8f5f0;
-    border-color: #d8d0c4;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     color: var(--text-primary);
 }
 
@@ -253,9 +182,8 @@
 }
 
 :root.light .skill-list .skill:hover {
-    background: rgba(44, 95, 74, 0.1);
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
 }
 
 :root.light .timeline li {
@@ -298,7 +226,7 @@
     border-top-color: var(--border);
 }
 
-/* QUIZ */
+/* ── QUIZ ──────────────────────────────────────── */
 :root.light .quiz-btn {
     background: #ffffff;
     border-color: var(--border);
@@ -311,13 +239,13 @@
 }
 
 :root.light .quiz-btn.correct {
-    background: rgba(44, 175, 129, 0.775);
+    background: rgba(44, 175, 129, 0.15);
     border-color: #2caf82;
     color: #2caf82;
 }
 
-:root.light.quiz-btn.wrong {
-    background: rgba(220, 80, 80, 0.695);
+:root.light .quiz-btn.wrong {
+    background: rgba(220, 80, 80, 0.15);
     border-color: #dc5050;
     color: #dc5050;
 }

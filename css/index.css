@@ -72,7 +72,6 @@
 
 /* PROJECTS SECTION */
 .projects {
-    background: rgba(26, 31, 46, 0.5);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding-top: 2.5rem;
@@ -99,14 +98,12 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 30px;
     margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 90%;
+    max-width: 80%;
+    margin: 0 auto;
     padding: 0 30px;
-    justify-content: center;
 }
 
 .project-card, .testimonial-card {
@@ -215,7 +212,7 @@
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 30px;
 }
 
@@ -313,9 +310,17 @@
         font-size: 1.2rem;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .testimonials-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .project-card,
+    .testimonial-card {
+        width: 100%;
+        max-width: 100%;
     }
 
     .projects h2::before,
@@ -323,7 +328,7 @@
         display: none;
     }
 
-     .hero-avatar {
+    .hero-avatar {
         width: 120px;
         height: 120px;
         margin-bottom: 18px;

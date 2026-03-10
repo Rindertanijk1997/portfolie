@@ -18,8 +18,8 @@
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    padding: 20px 20px 80px;
+    gap: 10rem;
+    padding: 20px 0 80px;
     align-items: start;
 }
 
