@@ -5,13 +5,11 @@
 
 .contact-hero h1 {
     font-size: 3rem;
-    font-weight: 300;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
 
 .contact-hero p {
-    color: var(--text-secondary);
     font-size: 1.1rem;
 }
 
@@ -26,8 +24,6 @@
 /* KONTAKTINFO */
 .contact-info h2 {
     font-size: 1.4rem;
-    font-weight: 300;
-    letter-spacing: 1px;
     margin-bottom: 8px;
 }
 
@@ -51,7 +47,6 @@
 .contact-item span {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    transition: color 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -66,7 +61,6 @@
     align-items: center;
     gap: 10px;
     margin-top: 28px;
-    color: var(--text-secondary);
     font-size: 0.85rem;
 }
 

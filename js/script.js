@@ -1,5 +1,3 @@
-const BASE_PATH = '';
-
 async function loadHeader() {
     try {
         const response = await fetch('components/header/header.html');
@@ -50,19 +48,29 @@ function initThemeToggle() {
     const btn = document.getElementById('theme-toggle');
     if (!btn) return;
 
-    if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.classList.add('light');
-    }
+    const knob = btn.querySelector('.theme-knob');
+
+    const updateIcon = (isLight) => {
+        knob.textContent = isLight ? '☾' : '☼';
+    };
+
+    const isLight = localStorage.getItem('theme') === 'light';
+    if (isLight) document.documentElement.classList.add('light');
+    updateIcon(isLight);
 
     btn.addEventListener('click', () => {
         const isLight = document.documentElement.classList.toggle('light');
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        updateIcon(isLight);
     });
 }
 
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
+
+    const ERROR_COLOR = '#e07070';
+    const SUCCESS_COLOR = '#00fc8b';
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -75,31 +83,15 @@ function initContactForm() {
         const subject = form.querySelector('#subject').value.trim();
         const message = form.querySelector('#message').value.trim();
 
-        // Validering
-        if (name.length < 2) {
-            status.textContent = '✗ Ange ett giltigt namn (minst 2 tecken).';
-            status.style.color = '#e07070';
-            return;
-        }
+        const showError = (msg) => {
+            status.textContent = msg;
+            status.style.color = ERROR_COLOR;
+        };
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            status.textContent = '✗ Ange en giltig e-postadress.';
-            status.style.color = '#e07070';
-            return;
-        }
-
-        if (subject.length < 3) {
-            status.textContent = '✗ Ange ett ämne (minst 3 tecken).';
-            status.style.color = '#e07070';
-            return;
-        }
-
-        if (message.length < 10) {
-            status.textContent = '✗ Meddelandet är för kort (minst 10 tecken).';
-            status.style.color = '#e07070';
-            return;
-        }
+        if (name.length < 2) return showError('Ange ett giltigt namn (minst 2 tecken).');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('Ange en giltig e-postadress.');
+        if (subject.length < 3) return showError('Ange ett ämne (minst 3 tecken).');
+        if (message.length < 10) return showError('Meddelandet är för kort (minst 10 tecken).');
 
         btn.textContent = 'Skickar...';
         btn.disabled = true;
@@ -115,16 +107,15 @@ function initContactForm() {
             if (response.ok) {
                 form.reset();
                 btn.textContent = 'Skickat!';
-                status.textContent = '✓ Tack! Ditt meddelande har skickats.';
-                status.style.color = '#00fc8b';
+                status.textContent = 'Tack! Ditt meddelande har skickats.';
+                status.style.color = SUCCESS_COLOR;
             } else {
                 throw new Error();
             }
         } catch {
             btn.textContent = 'Skicka Meddelande';
             btn.disabled = false;
-            status.textContent = '✗ Något gick fel. Försök igen.';
-            status.style.color = '#e07070';
+            showError('Något gick fel. Försök igen.');
         }
     });
 }

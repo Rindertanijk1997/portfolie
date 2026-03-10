@@ -1,5 +1,3 @@
-/* FOOTER STYLES - PREMIUM */
-
 .footer {
     background: rgba(15, 20, 25, 0.9);
     border-top: 1px solid var(--border);
@@ -18,18 +16,11 @@
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
-
 .footer-linkedin {
     display: inline-block;
     margin-top: 8px;
-    color: var(--text-secondary);
     font-size: 0.85rem;
     letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-}
-
-.footer-linkedin:hover {
-    color: var(--accent);
 }
 
 /* FOOTER BOTTOM */
@@ -39,51 +30,19 @@
 }
 
 .footer-bottom p {
-    color: var(--text-secondary);
     font-size: 0.85rem;
     letter-spacing: 0.5px;
 }
 
-/* Small signature */
 .footer-sign {
-    color: var(--text-secondary);
     font-size: 0.75rem;
     opacity: 0.9;
     margin-top: 8px;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
     .footer {
         margin-top: 50px;
         padding-top: 40px;
-    }
-
-    .footer-content {
-        margin-bottom: 30px;
-        padding-bottom: 30px;
-    }
-
-    .footer-links {
-        gap: 20px;
-    }
-
-    .footer-links ul {
-        gap: 15px;
-    }
-
-    .footer-content h3 {
-        font-size: 1.4rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-links ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .footer-links {
-        gap: 10px;
     }
 }

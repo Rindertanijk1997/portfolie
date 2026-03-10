@@ -58,9 +58,6 @@
     box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 6px 18px rgba(0,212,255,0.08);
     margin-bottom: 24px;
     background: linear-gradient(135deg, rgba(0,212,255,0.04), rgba(212,175,55,0.03));
-}
-
-.hero-avatar {
     animation: avatarPuls 3s ease-in-out infinite;
 }
 
@@ -100,7 +97,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     gap: 30px;
-    margin-top: 50px;
     max-width: 80%;
     margin: 0 auto;
     padding: 0 30px;
