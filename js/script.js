@@ -1,29 +1,3 @@
-async function loadHeader() {
-    try {
-        const response = await fetch('components/header/header.html');
-        const headerHTML = await response.text();
-        document.getElementById('header').innerHTML = headerHTML;
-
-        const includes = document.querySelectorAll('#header [data-include]');
-        for (const el of includes) {
-            const src = el.getAttribute('data-include');
-            if (!src) continue;
-            try {
-                const resp = await fetch(src);
-                el.innerHTML = await resp.text();
-            } catch (incErr) {
-                console.error('Error loading include', src, incErr);
-            }
-        }
-
-        initThemeToggle();
-        initHamburger();
-    } catch (error) {
-        console.error('Error loading header:', error);
-    }
-}
-
-
 function initHamburger() {
     const btn = document.getElementById('hamburger');
     const links = document.getElementById('nav-links');
@@ -42,7 +16,6 @@ function initHamburger() {
         });
     });
 }
-
 
 function initThemeToggle() {
     const btn = document.getElementById('theme-toggle');
@@ -120,29 +93,6 @@ function initContactForm() {
     });
 }
 
-async function loadContactForm() {
-    const container = document.getElementById('contact-form-container');
-    if (!container) return;
-    try {
-        const response = await fetch('components/contact-form/contact-form.html');
-        container.innerHTML = await response.text();
-        initContactForm();
-    } catch (error) {
-        console.error('Error loading contact form:', error);
-    }
-}
-
-async function loadFooter() {
-    try {
-        const response = await fetch('components/footer/footer.html');
-        document.getElementById('footer').innerHTML = await response.text();
-        const year = document.getElementById('year');
-        if (year) year.textContent = new Date().getFullYear();
-    } catch (error) {
-        console.error('Error loading footer:', error);
-    }
-}
-
 function initTypewriter() {
     const el = document.getElementById('typewriter');
     if (!el) return;
@@ -161,9 +111,15 @@ function initTypewriter() {
     setTimeout(type, 1000);
 }
 
+function initYear() {
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    loadHeader();
-    loadFooter();
-    loadContactForm();
+    initThemeToggle();
+    initHamburger();
+    initContactForm();
     initTypewriter();
+    initYear();
 });
