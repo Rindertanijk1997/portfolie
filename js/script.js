@@ -104,11 +104,11 @@ function initTypewriter() {
     function type() {
         if (i < text.length) {
             el.insertAdjacentText('beforeend', text[i++]);
-            setTimeout(type, 50);
+            setTimeout(type, 65);
         }
     }
 
-    setTimeout(type, 1000);
+    setTimeout(type, 500);
 }
 
 function initYear() {

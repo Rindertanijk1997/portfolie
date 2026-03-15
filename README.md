@@ -11,9 +11,8 @@ En portfoliosida jag byggt med HTML, CSS och JavaScript.
 ## Vad som finns med
 
 - Dark/light mode med en toggle 
-- Kontaktformulär med validering kopplat till Formspree
-- Responsiv – fungerar på mobil och desktop
-- Komponenter (header, navbar, footer) 
+- Formspree – formulärhantering
+- Responsiv – fungerar på mobil och desktop 
 
 ## Tekniker
 

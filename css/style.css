@@ -70,10 +70,10 @@ a:hover {
 
 /*  HEADER  */
 .header {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 100;
-    background: var(--secondary);
+    background: rgba(15, 20, 25, 0.9);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(10px);
 }
@@ -266,9 +266,10 @@ a:hover {
 }
 
 .btn:hover, .btn-secondary:hover {
-    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.35), inset 0 0 20px rgba(255, 255, 255, 0.15);
-    background: linear-gradient(135deg, #e8d4a0 0%, #d4a574 100%);
-    color: #0a0e1a;
+      background: rgba(255, 255, 255, 0.093);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 .btn-large {
@@ -288,7 +289,7 @@ section {
     padding: 80px 0;
 }
 
-/*  UTILITIES */
+/*  DIVIDERS */
 .text-center { text-align: center; }
 .text-gold { color: var(--gold); }
 .text-accent { color: var(--accent); }

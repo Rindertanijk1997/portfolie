@@ -40,12 +40,15 @@
 
 .profile-card h3 {
     margin-bottom: 0.625em;
-    color: var(--accent);
 }
 
 .profile-card p, .profile-card li {
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+.profile-card h4 {
+    margin-top: 1rem;
 }
 
 .about-main .about-section {
