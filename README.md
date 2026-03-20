@@ -2,6 +2,8 @@
 
 En portfoliosida jag byggt med HTML, CSS och JavaScript.
 
+## besök sidan vandijk.se
+
 ## Sidor
 
 - **Hem** – hero med typewriter-effekt, projekt och referenser
@@ -22,4 +24,4 @@ En portfoliosida jag byggt med HTML, CSS och JavaScript.
 - Formspree
 
 
-## Sidan kommer snart även finnas tillgänglig via GitHub Pages.
+
