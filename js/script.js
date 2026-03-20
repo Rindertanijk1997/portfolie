@@ -116,10 +116,101 @@ function initYear() {
     if (year) year.textContent = new Date().getFullYear();
 }
 
+
+function initQuiz() {
+    const quizEl = document.getElementById('quiz');
+    if (!quizEl) return;
+
+    const questions = [
+        { question: 'Vilket lag hejar Rindert på?', options: ['Liverpool FC', 'Everton FC'], correct: 0 },
+        { question: 'Vad beställer Rindert på restaurang?', options: ['Räkmacka', 'Moules frites'], correct: 1 },
+        { question: 'Vilket är Rinderts favoritsport utanför fotboll?', options: ['Golf', 'Tennis'], correct: 0 },
+        { question: 'Vad är Rinderts favoritresmål?', options: ['Franska Rivieran', 'Italien'], correct: 0 },
+        { question: 'Hur föredrar Rindert att jobba?', options: ['Remote hemifrån', 'På kontor med kollegor'], correct: 1 }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function showQuestion() {
+        const q = questions[current];
+        document.getElementById('quiz-question').textContent = q.question;
+        document.getElementById('quiz-current').textContent = current + 1;
+
+        const optionsEl = document.getElementById('quiz-options');
+        optionsEl.innerHTML = '';
+
+        q.options.forEach((option, i) => {
+            const btn = document.createElement('button');
+            btn.textContent = option;
+            btn.className = 'quiz-btn';
+            btn.addEventListener('click', () => answer(i));
+            optionsEl.appendChild(btn);
+        });
+    }
+
+    function answer(index) {
+        const q = questions[current];
+        const buttons = document.querySelectorAll('.quiz-btn');
+
+        buttons.forEach(btn => btn.disabled = true);
+
+        if (index === q.correct) {
+            buttons[index].classList.add('correct');
+            score++;
+        } else {
+            buttons[index].classList.add('wrong');
+            buttons[q.correct].classList.add('correct');
+        }
+
+        setTimeout(() => {
+            current++;
+            if (current < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }, 1000);
+    }
+
+    function showResult() {
+        document.getElementById('quiz').style.display = 'none';
+        const result = document.getElementById('quiz-result');
+        result.style.display = 'block';
+
+        const messages = [
+            { min: 0, max: 1, text: 'Hmm, vi har nog inte träffats ännu!' },
+            { min: 2, max: 3, text: 'Inte illa! Du känner mig lite grann.' },
+            { min: 4, max: 4, text: 'Bra jobbat! Du känner mig ganska väl.' },
+            { min: 5, max: 5, text: 'Perfekt! Har vi träffats förut?' }
+        ];
+
+        const msg = messages.find(m => score >= m.min && score <= m.max);
+
+        result.innerHTML = `
+            <div class="quiz-score">${score} / 5</div>
+            <p class="quiz-message">${msg.text}</p>
+            <button class="btn quiz-restart">Försök igen</button>
+        `;
+
+        result.querySelector('.quiz-restart').addEventListener('click', () => {
+            current = 0;
+            score = 0;
+            result.style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            showQuestion();
+        });
+    }
+
+    showQuestion();
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
     initHamburger();
     initContactForm();
     initTypewriter();
+    initQuiz();
     initYear();
 });
